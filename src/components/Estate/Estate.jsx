@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import EstateCard from "../EstateCard";
+import EstateCard from "./EstateCard";
+
 
 const Estate = () => {
   const [estates, setEstates] = useState([]);

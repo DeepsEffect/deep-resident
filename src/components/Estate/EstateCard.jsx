@@ -40,7 +40,7 @@ const EstateCard = ({ estate }) => {
             <li key={idx}>{facility}</li>
           ))}
         </div>
-        <NavLink to={`/viewDetails/${id}`}>
+        <NavLink to={`/estateDetails/${id}`}>
           <div className="card-actions ">
             <button className="btn btn-primary w-full">View Details</button>
           </div>
