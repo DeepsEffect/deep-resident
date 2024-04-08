@@ -1,21 +1,50 @@
+import { NavLink } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 const EstateCard = ({ estate }) => {
-  const { id, image, estate_title } = estate;
+  const {
+    id,
+    image,
+    estate_title,
+    price,
+    description,
+    status,
+    segment_name,
+    area,
+    location,
+    facilities,
+  } = estate;
 
   return (
-    <div className="card bg-base-100 shadow-xl">
-      <figure>
+    <div className="card bg-base-100 shadow-xl ">
+      <figure className=" p-4 lg:p-6">
         <img
+          className="h-full lg:h-96 w-full box-border rounded-2xl"
           src={image}
-          alt="Shoes"
+          alt={`image of ${estate_title}`}
         />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{estate_title}</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+        <p>price: {price}</p>
+        <p>{description}</p>
+        <p>{segment_name}</p>
+        <p>status: {status}</p>
+        <p>Area: {area}</p>
+        <p>Location: {location}</p>
+        <p>
+          <strong>Facilities: </strong>
+        </p>
+        <div>
+          {facilities.map((facility, idx) => (
+            <li key={idx}>{facility}</li>
+          ))}
         </div>
+        <NavLink to={`/viewDetails/${id}`}>
+          <div className="card-actions ">
+            <button className="btn btn-primary w-full">View Details</button>
+          </div>
+        </NavLink>
       </div>
     </div>
   );

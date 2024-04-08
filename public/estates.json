@@ -8,7 +8,7 @@
       "status": "sale",
       "area": "2000 sq ft",
       "location": "Suburb, Los Angeles",
-      "image": "https://example.com/image1.jpg",
+      "image": "https://images.unsplash.com/photo-1558036117-15d82a90b9b1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "facilities": ["Spacious Living Room", "Backyard", "Garage"]
     },
     {
@@ -20,7 +20,7 @@
       "status": "rent",
       "area": "1000 sq ft",
       "location": "Downtown, New York City",
-      "image": "https://example.com/image2.jpg",
+      "image": "https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?q=80&w=2081&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "facilities": ["Open Kitchen", "Balcony", "Fitness Center"]
     },
     {
@@ -32,7 +32,7 @@
       "status": "sale",
       "area": "1800 sq ft",
       "location": "Historic District, Boston",
-      "image": "https://example.com/image3.jpg",
+      "image": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "facilities": ["Private Patio", "Community Pool", "Garage"]
     },
     {
@@ -44,7 +44,7 @@
       "status": "rent",
       "area": "800 sq ft",
       "location": "Near University Campus, San Francisco",
-      "image": "https://example.com/image4.jpg",
+      "image": "https://images.unsplash.com/photo-1612637968894-660373e23b03?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "facilities": ["Study Lounge", "Laundry Facilities", "Bike Storage"]
     },
     {
@@ -56,7 +56,7 @@
       "status": "rent",
       "area": "Varies",
       "location": "Retirement Village, Miami",
-      "image": "https://example.com/image5.jpg",
+      "image": "https://images.unsplash.com/photo-1489370321024-e0410ad08da4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "facilities": ["Assisted Living Services", "Community Dining", "Wellness Center"]
     },
     {
@@ -68,7 +68,7 @@
       "status": "rent",
       "area": "Varies",
       "location": "Beachfront/Scenic Location, Honolulu",
-      "image": "https://example.com/image6.jpg",
+      "image": "https://images.unsplash.com/photo-1464146072230-91cabc968266?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "facilities": ["Private Pool", "BBQ Area", "Beach Access"]
     }
   ]
