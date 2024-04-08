@@ -18,6 +18,7 @@ export const router = createBrowserRouter([
       {
         path: "/estateDetails/:id",
         element: <EstateDetails></EstateDetails>,
+        loader: () => fetch("/estates.json")
       },
       {
         path: "/login",
