@@ -7,16 +7,10 @@ const Nav = () => {
         <NavLink to={"/"}>Home</NavLink>
       </li>
       <li>
-        <NavLink to={"/register"}>Register</NavLink>
+        <NavLink to={"/about"}>About</NavLink>
       </li>
       <li>
-        <NavLink to={"/login"}>login</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/userprofile"}>user profile</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/updateProfile"}>update profile</NavLink>
+        <NavLink to={"/faq"}>FAQ || Troubleshoot</NavLink>
       </li>
     </>
   );
