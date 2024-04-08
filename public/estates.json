@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Cozy Family Home",
+      "segment_name": "Single-family Home",
+      "description": "A cozy single-family home nestled in a quiet neighborhood. Perfect for families looking for comfort and tranquility.",
+      "price": "$350,000",
+      "status": "sale",
+      "area": "2000 sq ft",
+      "location": "Suburb, Los Angeles",
+      "image": "https://example.com/image1.jpg",
+      "facilities": ["Spacious Living Room", "Backyard", "Garage"]
+    },
+    {
+      "id": 2,
+      "estate_title": "Modern City Apartment",
+      "segment_name": "Apartment",
+      "description": "A modern apartment located in the bustling city center. Ideal for urban living with convenient access to amenities.",
+      "price": "$2,000/month",
+      "status": "rent",
+      "area": "1000 sq ft",
+      "location": "Downtown, New York City",
+      "image": "https://example.com/image2.jpg",
+      "facilities": ["Open Kitchen", "Balcony", "Fitness Center"]
+    },
+    {
+      "id": 3,
+      "estate_title": "Charming Townhouse",
+      "segment_name": "Townhouse",
+      "description": "A charming townhouse with classic architecture and contemporary interiors. Enjoy the comfort of townhouse living in a vibrant community.",
+      "price": "$450,000",
+      "status": "sale",
+      "area": "1800 sq ft",
+      "location": "Historic District, Boston",
+      "image": "https://example.com/image3.jpg",
+      "facilities": ["Private Patio", "Community Pool", "Garage"]
+    },
+    {
+      "id": 4,
+      "estate_title": "Student Housing Apartments",
+      "segment_name": "Student Housing",
+      "description": "Modern apartments designed specifically for student living. Located close to universities and offering convenient amenities.",
+      "price": "$1,200/month",
+      "status": "rent",
+      "area": "800 sq ft",
+      "location": "Near University Campus, San Francisco",
+      "image": "https://example.com/image4.jpg",
+      "facilities": ["Study Lounge", "Laundry Facilities", "Bike Storage"]
+    },
+    {
+      "id": 5,
+      "estate_title": "Senior Living Community",
+      "segment_name": "Senior Living",
+      "description": "A peaceful senior living community offering comfortable accommodations and a supportive environment for retirees.",
+      "price": "Starting at $3,000/month",
+      "status": "rent",
+      "area": "Varies",
+      "location": "Retirement Village, Miami",
+      "image": "https://example.com/image5.jpg",
+      "facilities": ["Assisted Living Services", "Community Dining", "Wellness Center"]
+    },
+    {
+      "id": 6,
+      "estate_title": "Relaxing Vacation Rental",
+      "segment_name": "Vacation Rental",
+      "description": "Escape to this relaxing vacation rental for a memorable getaway. Enjoy stunning views and convenient access to local attractions.",
+      "price": "$250/night",
+      "status": "rent",
+      "area": "Varies",
+      "location": "Beachfront/Scenic Location, Honolulu",
+      "image": "https://example.com/image6.jpg",
+      "facilities": ["Private Pool", "BBQ Area", "Beach Access"]
+    }
+  ]
+  
