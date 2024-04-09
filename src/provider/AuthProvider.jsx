@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 import {
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
@@ -23,6 +25,11 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  const googleProvider = new GoogleAuthProvider();
+  const signInWithGoogle = () => {
+    return signInWithPopup(auth, googleProvider)
+  }
+
   const logOut = () => {
     return signOut(auth);
   };
@@ -40,8 +47,8 @@ const AuthProvider = ({ children }) => {
       };
     });
   }, []);
-  
-  const authInfo = { user, createUser, signInUser, logOut, loading };
+
+  const authInfo = { user, createUser, signInUser, logOut, signInWithGoogle, loading };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
