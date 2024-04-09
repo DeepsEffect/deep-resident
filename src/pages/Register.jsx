@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
+import { toast } from "react-hot-toast";
 
 const Register = () => {
   const { createUser, signInWithGoogle } = useContext(AuthContext);
@@ -14,8 +15,23 @@ const Register = () => {
     const email = e.target.email.value;
     const photoURL = e.target.photoURL.value;
     const password = e.target.password.value;
-    console.log(userName, email, photoURL, password);
+    // console.log(userName, email, photoURL, password);
 
+    // password validation
+    if (password.length < 6) {
+      toast.error("Password must be more that 6 characters");
+      return;
+    }
+    if (!/[A-Z]/.test(password)) {
+      toast.error("Password must contain at least one uppercase letter.");
+      return;
+    }
+    if (!/[a-z]/.test(password)) {
+      toast.error("Password must contain at least one lowercase letter.");
+      return;
+    }
+
+    //create user with email and password
     createUser(email, password)
       .then((result) => {
         if (auth.currentUser != null) {
@@ -24,17 +40,22 @@ const Register = () => {
             photoURL: photoURL,
           })
             .then(() => {
-              navigate("/");
-              window.location.reload()
               console.log(result);
+              console.log(auth.currentUser);
+              // window.location.reload();
+              toast.success(
+                `"${result.user.displayName}" Registered Successfully`
+              );
+              navigate("/");
             })
             .catch((error) => {
-              console.error("Error updating profile:", error);
+              console.error("Error updating profile:", error.firebase);
             });
         }
       })
       .catch((error) => {
-        console.error(error);
+        // console.error(error.code);
+        toast.error(error.code);
       });
   };
 
@@ -45,7 +66,7 @@ const Register = () => {
         navigate("/");
         console.log(result);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => toast.error(error.code));
   };
 
   return (
@@ -98,6 +119,7 @@ const Register = () => {
             Password
           </label>
           <input
+            required
             type="password"
             name="password"
             id="password"

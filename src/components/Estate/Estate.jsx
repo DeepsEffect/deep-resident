@@ -11,7 +11,7 @@ const Estate = () => {
       .then((data) => setEstates(data));
   }, []);
 
-  console.log(estates);
+  // console.log(estates);
   return (
     <div>
       <h2 className="text-center font-bold text-2xl mt-10">

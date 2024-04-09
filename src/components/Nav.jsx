@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Nav = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, } = useContext(AuthContext);
 
   const handleLogout = () => {
     logOut();
@@ -61,7 +61,7 @@ const Nav = () => {
           <div className="avatar tooltip-bottom z-10 tooltip cursor-pointer" data-tip={user.displayName}>
             <div className="w-12 rounded-full">
               {user.photoURL ? (
-                <img src={user.photoURL} alt="" />
+                <img src={user.photoURL} alt="user image" />
               ) : (
                 <img src="https://images.unsplash.com/photo-1657642119697-6a70dc74c03d?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
               )}
