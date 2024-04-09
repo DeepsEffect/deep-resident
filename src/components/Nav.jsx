@@ -1,6 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Nav = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut();
+  };
   const navLinks = (
     <>
       <li>
@@ -42,20 +49,37 @@ const Nav = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="text-xl lg:text-2xl  lg:font-bold">Deep Resident</a>
+        <Link to={"/"} className="text-xl lg:text-2xl  lg:font-bold">
+          Deep Resident
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <div className="avatar mr-4">
-          <div className="w-12 rounded-full">
-            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        {user ? (
+          <div className="avatar">
+            <div className="w-12 rounded-full">
+              <img src="https://images.unsplash.com/photo-1514626585111-9aa86183ac98?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
           </div>
-        </div>
-        <NavLink to={"/login"} className="btn">
-          Login
-        </NavLink>
+        ) : (
+          <div className="avatar placeholder mr-4">
+            <div className="bg-neutral text-neutral-content rounded-full w-12">
+              <span className="text-2xl">user</span>
+            </div>
+          </div>
+        )}
+
+        {user ? (
+          <button onClick={handleLogout} className="btn ml-4">
+            Logout
+          </button>
+        ) : (
+          <NavLink to={"/login"} className="btn">
+            Login
+          </NavLink>
+        )}
       </div>
     </div>
   );
