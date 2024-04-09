@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import { auth } from "../firebase/firebase.init";
 
 const Register = () => {
   const { createUser, signInWithGoogle } = useContext(AuthContext);
@@ -13,10 +15,23 @@ const Register = () => {
     const photoURL = e.target.photoURL.value;
     const password = e.target.password.value;
     console.log(userName, email, photoURL, password);
+
     createUser(email, password)
       .then((result) => {
-        navigate("/");
-        console.log(result);
+        if (auth.currentUser != null) {
+          updateProfile(auth.currentUser, {
+            displayName: userName,
+            photoURL: photoURL,
+          })
+            .then(() => {
+              navigate("/");
+              window.location.reload()
+              console.log(result);
+            })
+            .catch((error) => {
+              console.error("Error updating profile:", error);
+            });
+        }
       })
       .catch((error) => {
         console.error(error);
@@ -47,6 +62,7 @@ const Register = () => {
             Username
           </label>
           <input
+            required
             type="text"
             name="username"
             id="username"
@@ -59,6 +75,7 @@ const Register = () => {
             Email
           </label>
           <input
+            required
             type="email"
             name="email"
             placeholder="your email"
@@ -67,7 +84,7 @@ const Register = () => {
         </div>
         <div className="space-y-1 text-sm">
           <label htmlFor="photoURL" className="block dark:text-gray-600">
-            PhotoURL
+            Photo Url (optional)
           </label>
           <input
             type="photoURL"

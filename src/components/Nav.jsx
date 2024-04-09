@@ -58,7 +58,7 @@ const Nav = () => {
       </div>
       <div className="navbar-end">
         {user ? (
-          <div className="avatar tooltip-bottom z-10 tooltip cursor-pointer" data-tip={user.email}>
+          <div className="avatar tooltip-bottom z-10 tooltip cursor-pointer" data-tip={user.displayName}>
             <div className="w-12 rounded-full">
               {user.photoURL ? (
                 <img src={user.photoURL} alt="" />
