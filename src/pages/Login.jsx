@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Login = () => {
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
-
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -12,6 +12,7 @@ const Login = () => {
     signInUser(email, password)
       .then((result) => {
         console.log(result.user);
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);
@@ -23,6 +24,7 @@ const Login = () => {
       .then((result) => console.log(result))
       .catch((error) => console.error(error));
   };
+
   return (
     <div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800 mx-auto mt-10">
       <h1 className="text-2xl font-bold text-center">Login</h1>

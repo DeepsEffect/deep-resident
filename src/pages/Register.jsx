@@ -1,9 +1,10 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Register = () => {
   const { createUser, signInWithGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,6 +15,7 @@ const Register = () => {
     console.log(userName, email, photoURL, password);
     createUser(email, password)
       .then((result) => {
+        navigate("/");
         console.log(result);
       })
       .catch((error) => {
@@ -25,6 +27,7 @@ const Register = () => {
   const handleRegisterWithGoogle = () => {
     signInWithGoogle()
       .then((result) => {
+        navigate("/");
         console.log(result);
       })
       .catch((error) => console.error(error));
