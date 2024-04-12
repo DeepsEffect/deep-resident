@@ -6,6 +6,9 @@ import Register from "../pages/Register";
 import UserProfile from "../pages/UserProfile";
 import EstateDetails from "../components/Estate/EstateDetails";
 import PrivateRoute from "./PrivateRoute";
+import About from "../pages/About";
+import Error from "../components/Error";
+import Faq from "../pages/Faq";
 
 export const router = createBrowserRouter([
   {
@@ -30,12 +33,32 @@ export const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
+        path: "/userProfile",
+        element: (
+          <PrivateRoute>
+            <UserProfile></UserProfile>
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "/register",
         element: <Register></Register>,
       },
       {
         path: "/userProfile",
         element: <UserProfile></UserProfile>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "*",
+        element: <Error></Error>,
+      },
+      {
+        path: "/faq",
+        element: <Faq></Faq>,
       },
     ],
   },

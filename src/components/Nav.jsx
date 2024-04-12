@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Nav = () => {
-  const { user, logOut, } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
   const handleLogout = () => {
     logOut();
@@ -19,6 +19,11 @@ const Nav = () => {
       <li>
         <NavLink to={"/faq"}>FAQ || Troubleshoot</NavLink>
       </li>
+      {user && (
+        <li>
+          <NavLink to={"/userProfile"}>User Profile</NavLink>
+        </li>
+      )}
     </>
   );
 
@@ -58,7 +63,10 @@ const Nav = () => {
       </div>
       <div className="navbar-end">
         {user ? (
-          <div className="avatar tooltip-bottom z-10 tooltip cursor-pointer" data-tip={user.displayName}>
+          <div
+            className="avatar tooltip-bottom z-10 tooltip cursor-pointer"
+            data-tip={user.displayName}
+          >
             <div className="w-12 rounded-full">
               {user.photoURL ? (
                 <img src={user.photoURL} alt="user image" />
