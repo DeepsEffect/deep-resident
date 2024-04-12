@@ -45,7 +45,7 @@ const Register = () => {
           })
             .then(() => {
               console.log(result);
-              console.log(auth.currentUser);
+              // console.log(auth.currentUser);
               setTimeout(() => {
                 window.location.reload();
               }, 1000);

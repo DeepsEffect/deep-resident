@@ -23,9 +23,14 @@ const Nav = () => {
         <NavLink to={"/faq"}>FAQ</NavLink>
       </li>
       {user && (
-        <li>
-          <NavLink to={"/userProfile"}>User Profile</NavLink>
-        </li>
+        <>
+          <li>
+            <NavLink to={"/userProfile"}>User Profile</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/updateProfile"}>Update Profile</NavLink>
+          </li>
+        </>
       )}
     </>
   );

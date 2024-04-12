@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import About from "../pages/About";
 import Error from "../components/Error";
 import Faq from "../pages/Faq";
+import UpdateProfile from "../pages/UpdateProfile";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,14 @@ export const router = createBrowserRouter([
       {
         path: "/userProfile",
         element: <UserProfile></UserProfile>,
+      },
+      {
+        path: "/updateProfile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile></UpdateProfile>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/about",
