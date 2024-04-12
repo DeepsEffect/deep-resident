@@ -66,7 +66,7 @@ const Nav = () => {
       </div>
       <div className="navbar-end ">
         {user ? (
-          <NavLink to={'/userProfile'}>
+          <NavLink to={"/userProfile"}>
             <div
               className="avatar tooltip-bottom z-10 tooltip cursor-pointer"
               data-tip={user.displayName}

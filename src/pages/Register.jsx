@@ -1,14 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
 import { toast } from "react-hot-toast";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 
 const Register = () => {
   const { createUser, signInWithGoogle, signInWithGitHub } =
     useContext(AuthContext);
   const navigate = useNavigate();
+
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -77,7 +80,7 @@ const Register = () => {
     signInWithGitHub()
       .then((result) => {
         navigate("/");
-        toast.success('Register successful')
+        toast.success("Register successful");
         console.log(result);
       })
       .catch((error) => {
@@ -134,14 +137,22 @@ const Register = () => {
           <label htmlFor="password" className="block dark:text-gray-600">
             Password
           </label>
-          <input
-            required
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
-            className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
-          />
+          <div className="relative">
+            <input
+              required
+              type={showPassword ? "text" : "password"}
+              name="password"
+              id="password"
+              placeholder="Password"
+              className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+            />
+            <div
+              className="absolute top-3 right-2 cursor-pointer text-xl"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaRegEye /> : <FaRegEyeSlash />}
+            </div>
+          </div>
           <div className="flex justify-end text-xs dark:text-gray-600">
             <a rel="noopener noreferrer" href="#">
               Forgot Password?
