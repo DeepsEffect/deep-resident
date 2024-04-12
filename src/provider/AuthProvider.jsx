@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import {
+  GithubAuthProvider,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -27,8 +28,13 @@ const AuthProvider = ({ children }) => {
 
   const googleProvider = new GoogleAuthProvider();
   const signInWithGoogle = () => {
-    return signInWithPopup(auth, googleProvider)
-  }
+    return signInWithPopup(auth, googleProvider);
+  };
+
+  const gitHubProvider = new GithubAuthProvider();
+  const signInWithGitHub = () => {
+    return signInWithPopup(auth, gitHubProvider);
+  };
 
   const logOut = () => {
     return signOut(auth);
@@ -48,7 +54,15 @@ const AuthProvider = ({ children }) => {
     });
   }, []);
 
-  const authInfo = { user, createUser, signInUser, logOut, signInWithGoogle, loading };
+  const authInfo = {
+    user,
+    createUser,
+    signInUser,
+    logOut,
+    signInWithGoogle,
+    signInWithGitHub,
+    loading,
+  };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

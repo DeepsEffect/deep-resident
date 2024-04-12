@@ -1,12 +1,15 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { toast } from "react-hot-toast";
+import { RxAvatar } from "react-icons/rx";
 
 const Nav = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const handleLogout = () => {
     logOut();
+    toast.success(`${user.displayName} Logged out successfully`);
   };
   const navLinks = (
     <>
@@ -17,7 +20,7 @@ const Nav = () => {
         <NavLink to={"/about"}>About</NavLink>
       </li>
       <li>
-        <NavLink to={"/faq"}>FAQ || Troubleshoot</NavLink>
+        <NavLink to={"/faq"}>FAQ</NavLink>
       </li>
       {user && (
         <li>
@@ -49,7 +52,7 @@ const Nav = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-base-100 rounded-box w-52"
           >
             {navLinks}
           </ul>
@@ -61,26 +64,24 @@ const Nav = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end ">
         {user ? (
-          <div
-            className="avatar tooltip-bottom z-10 tooltip cursor-pointer"
-            data-tip={user.displayName}
-          >
-            <div className="w-12 rounded-full">
-              {user.photoURL ? (
-                <img src={user.photoURL} alt="user image" />
-              ) : (
-                <img src="https://images.unsplash.com/photo-1657642119697-6a70dc74c03d?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-              )}
+          <NavLink to={'/userProfile'}>
+            <div
+              className="avatar tooltip-bottom z-10 tooltip cursor-pointer"
+              data-tip={user.displayName}
+            >
+              <div className="w-12 rounded-full">
+                {user.photoURL ? (
+                  <img src={user.photoURL} alt="user profile" />
+                ) : (
+                  <img src="https://images.unsplash.com/photo-1657642119697-6a70dc74c03d?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                )}
+              </div>
             </div>
-          </div>
+          </NavLink>
         ) : (
-          <div className="avatar placeholder mr-4">
-            <div className="bg-neutral text-neutral-content rounded-full w-12">
-              <span className="text-2xl">user</span>
-            </div>
-          </div>
+          <RxAvatar className="text-4xl mr-4" />
         )}
 
         {user ? (

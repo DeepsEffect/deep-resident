@@ -21,7 +21,7 @@ const Banner = () => {
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
       autoplay={{ delay: 4000 }}
-      className="mySwiper lg:rounded-xl mt-6 lg:mt-10"
+      className="mySwiper lg:rounded-xl mt-6 lg:mt-4"
     >
       <SwiperSlide className="">
         <img
