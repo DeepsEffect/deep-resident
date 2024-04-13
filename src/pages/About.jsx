@@ -6,8 +6,10 @@ const ABout = () => {
       <Helmet>
         <title>Deep-Resident | About</title>
       </Helmet>
-      <h1 className="text-3xl font-bold mb-4">About Deep-Resident</h1>
-      <section className="mb-8">
+      <h1 data-aos="fade-up" className="text-3xl font-bold mb-4">
+        About Deep-Resident
+      </h1>
+      <section data-aos="fade-right" className="mb-8">
         <h2 className="text-xl font-semibold mb-2">Our Story</h2>
         <p>
           Welcome to Deep-Resident, where we strive to make your real estate
@@ -17,7 +19,7 @@ const ABout = () => {
         </p>
       </section>
 
-      <section className="mb-8">
+      <section data-aos="fade-left" className="mb-8">
         <h2 className="text-xl font-semibold mb-2">Our Team</h2>
         <p>
           Meet the talented individuals behind Deep-Resident. Our team of
@@ -27,7 +29,7 @@ const ABout = () => {
         </p>
       </section>
 
-      <section className="mb-8">
+      <section data-aos="fade-right" className="mb-8">
         <h2 className="text-xl font-semibold mb-2">Our Services</h2>
         <p>
           At Deep-Resident, we offer a comprehensive range of real estate
@@ -37,7 +39,7 @@ const ABout = () => {
         </p>
       </section>
 
-      <section className="mb-8">
+      <section data-aos="fade-left" className="mb-8">
         <h2 className="text-xl font-semibold mb-2">Why Choose Us</h2>
         <ul className="list-disc pl-5">
           <li>
@@ -68,7 +70,7 @@ const ABout = () => {
         </ul>
       </section>
 
-      <section className="mb-8">
+      <section data-aos="fade-right" className="mb-8">
         <h2 className="text-xl font-semibold mb-2">Testimonials</h2>
         <div className="mb-4">
           <p>
@@ -86,16 +88,16 @@ const ABout = () => {
         </div>
       </section>
 
-      <section className="mb-8">
+      <section data-aos="fade-left" className="mb-8">
         <h2 className="text-xl font-semibold mb-2">Contact Us</h2>
         <p>
           Ready to take the next step? Get in touch with us today to discuss
-          your real estate needs. You can reach us by phone at 999111222,
-          email at assignment09.ph@gmail.com, or visit us at Fargo.
+          your real estate needs. You can reach us by phone at 999111222, email
+          at assignment09.ph@gmail.com, or visit us at Fargo.
         </p>
       </section>
 
-      <section>
+      <section data-aos="fade-right">
         <h2 className="text-xl font-semibold mb-2">Follow Us</h2>
         <p>
           Stay connected with Deep-Resident on social media for the latest news,

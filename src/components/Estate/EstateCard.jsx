@@ -15,7 +15,12 @@ const EstateCard = ({ estate }) => {
   } = estate;
 
   return (
-    <div className="card bg-base-100 shadow-xl group overflow-hidden">
+    <div
+      data-aos="fade-right"
+      data-aos-offset="300"
+      data-aos-easing="ease-in-sine"
+      className="card bg-base-100 shadow-xl group overflow-hidden mt-10"
+    >
       <figure className=" p-4 lg:p-6 border relative">
         <img
           className="h-full lg:h-96 w-full box-border rounded-2xl transform transition-transform group-hover:scale-105"
