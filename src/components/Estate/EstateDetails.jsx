@@ -2,6 +2,7 @@ import { useParams, useLoaderData } from "react-router-dom";
 import { CiLocationOn } from "react-icons/ci";
 import { RiPriceTagFill } from "react-icons/ri";
 import { BiArea } from "react-icons/bi";
+import { Helmet } from "react-helmet-async";
 
 const EstateDetails = () => {
   const { id } = useParams();
@@ -20,6 +21,9 @@ const EstateDetails = () => {
   } = estate;
   return (
     <section className="dark:bg-gray-100 dark:text-gray-800 rounded-2xl mt-4">
+      <Helmet>
+        <title>Estate Details | {estate_title}</title>
+      </Helmet>
       <div className="container lg:p-20 flex flex-col justify-center mx-auto sm:py-12 lg:py-24 lg:flex-row">
         <div className="flex items-center justify-center p-6 ">
           <img

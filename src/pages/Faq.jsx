@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet-async";
+
 const Faq = () => {
   return (
     <section className="dark:bg-gray-100 dark:text-gray-800 mt-10">
+      <Helmet>
+        <title>Deep-Resident | faq</title>
+      </Helmet>
       <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
         <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">
           Frequently Asked Questions
