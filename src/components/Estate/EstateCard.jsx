@@ -10,10 +10,8 @@ const EstateCard = ({ estate }) => {
     price,
     description,
     status,
-    segment_name,
-    area,
     location,
-    facilities,
+    segment_name,
   } = estate;
 
   return (
@@ -27,11 +25,11 @@ const EstateCard = ({ estate }) => {
         <button className="absolute btn glass btn-primary top-10 left-10 text-white font-bold">
           {status}
         </button>
-        <button className="absolute btn glass btn-primary top-10 left-25 text-white font-bold">
-          {estate_title}
+        <button className="absolute btn glass btn-primary top-10 left-[120px] text-white font-bold">
+          {segment_name}
         </button>
         <div className=" flex items-center gap-2 absolute bottom-10 left-10 text-white font-bold">
-          <CiLocationOn className="text-xl"/>
+          <CiLocationOn className="text-xl" />
           <p>{location}</p>
         </div>
       </figure>
