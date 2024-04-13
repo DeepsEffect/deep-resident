@@ -12,7 +12,6 @@ const UpdateProfile = () => {
     e.preventDefault();
     const name = e.target.username.value;
     const photoUrl = e.target.photoUrl.value;
-    console.log(name, photoUrl);
 
     updateProfile(auth.currentUser, {
       displayName: name,
@@ -23,7 +22,7 @@ const UpdateProfile = () => {
         setTimeout(() => {
           window.location.reload();
         }, 1000);
-        toast.success(`Updated Successfully`);
+        toast.success(`Updated Changes Successfully`);
       })
       .catch((error) => {
         console.error(error);

@@ -13,13 +13,13 @@ const Register = () => {
 
   const [showPassword, setShowPassword] = useState(false);
 
+  //handling submit button
   const handleSubmit = (e) => {
     e.preventDefault();
     const userName = e.target.username.value;
     const email = e.target.email.value;
     const photoURL = e.target.photoURL.value;
     const password = e.target.password.value;
-    // console.log(userName, email, photoURL, password);
 
     // password validation
     if (password.length < 6) {
@@ -45,7 +45,6 @@ const Register = () => {
           })
             .then(() => {
               console.log(result);
-              // console.log(auth.currentUser);
               setTimeout(() => {
                 window.location.reload();
               }, 1000);
@@ -60,7 +59,6 @@ const Register = () => {
         }
       })
       .catch((error) => {
-        // console.error(error.code);
         toast.error(error.code);
       });
   };
