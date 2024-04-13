@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
-  const { signInUser, signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
+  const { signInUser, signInWithGoogle, signInWithGitHub } =
+    useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   // console.log(location);
@@ -21,7 +23,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.error(error);
-        toast.error(error.code)
+        toast.error(error.code);
       });
   };
 
@@ -51,6 +53,9 @@ const Login = () => {
 
   return (
     <div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800 mx-auto mt-10">
+      <Helmet>
+        <title>Deep-Resident | Login</title>
+      </Helmet>
       <h1 className="text-2xl font-bold text-center">Login</h1>
       <form
         onSubmit={handleLogin}

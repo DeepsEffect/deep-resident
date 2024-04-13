@@ -31,12 +31,14 @@ const AuthProvider = ({ children }) => {
   //sign in with google
   const googleProvider = new GoogleAuthProvider();
   const signInWithGoogle = () => {
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
 
   //sign in with github
   const gitHubProvider = new GithubAuthProvider();
   const signInWithGitHub = () => {
+    setLoading(true);
     return signInWithPopup(auth, gitHubProvider);
   };
 

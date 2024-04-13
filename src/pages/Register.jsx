@@ -5,6 +5,7 @@ import { updateProfile } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
 import { toast } from "react-hot-toast";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser, signInWithGoogle, signInWithGitHub } =
@@ -88,6 +89,9 @@ const Register = () => {
 
   return (
     <div className="w-full max-w-md p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800 mx-auto mt-10">
+      <Helmet>
+        <title>Deep-Resident | Register</title>
+      </Helmet>
       <h1 className="text-2xl font-bold text-center">Register</h1>
       <form
         onSubmit={handleSubmit}

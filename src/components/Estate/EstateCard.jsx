@@ -15,10 +15,10 @@ const EstateCard = ({ estate }) => {
   } = estate;
 
   return (
-    <div className="card bg-base-100 shadow-xl ">
+    <div className="card bg-base-100 shadow-xl group overflow-hidden">
       <figure className=" p-4 lg:p-6 border relative">
         <img
-          className="h-full lg:h-96 w-full box-border rounded-2xl"
+          className="h-full lg:h-96 w-full box-border rounded-2xl transform transition-transform group-hover:scale-105"
           src={image}
           alt={`image of ${estate_title}`}
         />
