@@ -44,26 +44,26 @@ const EstateDetails = () => {
             </div>
             <div className="flex gap-2 items-center">
               <RiPriceTagFill className="text-2xl" />
-              <p>Price: {price}</p>
+              <p className="font-bold">Price: {price}</p>
             </div>
             <div className=" flex items-center gap-2 font-semibold">
               <CiLocationOn className="text-2xl" />
-              <p>{location}</p>
+              <p className="font-bold">{location}</p>
             </div>
             <div className="text-left">
-              <h2>Facilities: </h2>
+              <h2 className="font-bold">Facilities: </h2>
               {facilities.map((facility, idx) => (
-                <div key={idx} className="badge badge-accent  mr-4 mt-2">
+                <div key={idx} className="badge badge-accent mr-4 mt-2 font-semibold">
                   {facility}
                 </div>
               ))}
             </div>
             <div className="flex items-center gap-2">
               <BiArea className="text-2xl" />
-              <p className="text-lg">Area: {area}</p>
+              <p className="text-lg font-semibold">Area: {area}</p>
             </div>
           </div>
-          <button className="btn btn-primary mt-10">Purchase</button>
+          <button className="btn btn-primary mt-10 font-bold">Purchase</button>
         </div>
       </div>
     </section>
