@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="footer p-10 bg-base-200 text-base-content mt-20">
       <aside>
         <img className="w-14" src="/realEstate.ico" alt="logo" />
-        <p className="font-bold">
+        <p className="font-bold font-heading">
           Deep Resident
           <br />
           Providing reliable real estate since 1992

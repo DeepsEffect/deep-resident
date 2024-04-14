@@ -5,7 +5,7 @@ import Estate from "../components/Estate/Estate";
 
 const Home = () => {
   return (
-    <div>
+    <div className="font-body">
       <Helmet>
         <title>Deep-Resident | Home</title>
       </Helmet>

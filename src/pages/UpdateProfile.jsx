@@ -30,13 +30,13 @@ const UpdateProfile = () => {
   };
 
   return (
-    <div className="grid max-w-screen-xl mt-6 lg:mt-10 grid-cols-1 items-center gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-gray-100 dark:text-gray-800">
+    <div className="grid max-w-screen-xl mt-2 lg:mt-10 grid-cols-1 items-center gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-gray-100 dark:text-gray-800">
       <Helmet>
         <title>Deep-Resident | Update Profile</title>
       </Helmet>
       <div className="flex flex-col justify-between ">
         <div className="space-y-2 mb-4">
-          <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
+          <h2 className="text-4xl font-bold leading-tight lg:text-5xl font-heading">
             Update Profile
           </h2>
           <p>User Email: {user?.email}</p>
@@ -73,7 +73,7 @@ const UpdateProfile = () => {
             className="w-full p-3 rounded dark:bg-gray-100"
           />
         </div>
-        <button className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:bg-violet-600 dark:text-gray-50">
+        <button className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded-lg btn text-white bg-primary hover:bg-accent">
           Update Changes
         </button>
       </form>

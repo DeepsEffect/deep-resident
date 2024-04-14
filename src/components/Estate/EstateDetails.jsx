@@ -3,6 +3,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { RiPriceTagFill } from "react-icons/ri";
 import { BiArea } from "react-icons/bi";
 import { Helmet } from "react-helmet-async";
+import { toast } from "react-hot-toast";
 
 const EstateDetails = () => {
   const { id } = useParams();
@@ -19,6 +20,10 @@ const EstateDetails = () => {
     location,
     facilities,
   } = estate;
+
+  const handlePurchase = () => {
+    toast.success("Purchase Successful");
+  };
   return (
     <section className="dark:bg-gray-100 dark:text-gray-800 rounded-2xl mt-4">
       <Helmet>
@@ -33,37 +38,56 @@ const EstateDetails = () => {
           />
         </div>
         <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
-          <h1 className="text-2xl font-bold leading-none sm:text-4xl">
+          <h1 className=" text-2xl lg:text-4xl font-bold font-heading leading-none sm:text-4xl">
             {estate_title}
           </h1>
           <p className="">{description}</p>
+          <div className=" my-6 border-b-2 border-secondary"></div>
           <div className="space-y-4">
-            <p>Segment Name: {segment_name}</p>
+            <p>
+              <span className="font-semibold">Segment Name:</span>{" "}
+              {segment_name}
+            </p>
             <div className="badge badge-secondary badge-outline font-bold">
               {status}
             </div>
             <div className="flex gap-2 items-center">
-              <RiPriceTagFill className="text-2xl" />
-              <p className="font-bold">Price: {price}</p>
+              <RiPriceTagFill className="text-2xl text-secondary" />
+              <p>
+                <span className="font-semibold">Price:</span> {price}
+              </p>
             </div>
-            <div className=" flex items-center gap-2 font-semibold">
-              <CiLocationOn className="text-2xl" />
-              <p className="font-bold">{location}</p>
+            <div className=" flex items-center gap-2">
+              <CiLocationOn className="text-2xl text-secondary" />
+              <p>
+                <span className="font-semibold">Location: </span>
+                {location}
+              </p>
             </div>
             <div className="text-left">
               <h2 className="font-bold">Facilities: </h2>
               {facilities.map((facility, idx) => (
-                <div key={idx} className="badge badge-accent mr-4 mt-2 font-semibold">
+                <div
+                  key={idx}
+                  className="badge bg-accent text-white mr-4 mt-2 font-semibold"
+                >
                   {facility}
                 </div>
               ))}
             </div>
             <div className="flex items-center gap-2">
-              <BiArea className="text-2xl" />
-              <p className="text-lg font-semibold">Area: {area}</p>
+              <BiArea className="text-2xl text-secondary" />
+              <p>
+                <span className="font-semibold">Area:</span> {area}
+              </p>
             </div>
           </div>
-          <button className="btn btn-primary mt-10 font-bold">Purchase</button>
+          <button
+            onClick={handlePurchase}
+            className="btn text-white bg-primary hover:bg-accent mt-10 font-bold"
+          >
+            Purchase
+          </button>
         </div>
       </div>
     </section>

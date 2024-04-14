@@ -19,9 +19,9 @@ const EstateCard = ({ estate }) => {
       data-aos="fade-right"
       data-aos-offset="300"
       data-aos-easing="ease-in-sine"
-      className="card bg-base-100 shadow-xl group overflow-hidden mt-10"
+      className="card bg-base-100 shadow-xl group overflow-hidden lg:mt-6"
     >
-      <figure className=" p-4 lg:p-6 border relative">
+      <figure className="p-4 lg:p-6 border relative">
         <img
           className="h-full lg:h-96 w-full box-border rounded-2xl transform transition-transform group-hover:scale-105"
           src={image}
@@ -39,12 +39,12 @@ const EstateCard = ({ estate }) => {
         </div>
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{estate_title}</h2>
+        <h2 className="card-title font-heading text-2xl">{estate_title}</h2>
         <p>price: {price}</p>
         <p>{description}</p>
         <NavLink to={`/estateDetails/${id}`}>
           <div className="card-actions ">
-            <button className="btn btn-primary w-full">View Details</button>
+            <button className="btn text-white bg-primary hover:bg-accent font-bold w-full">View Details</button>
           </div>
         </NavLink>
       </div>

@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { AuthContext } from "../provider/AuthProvider";
+import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from "react-hot-toast";
 import { RxAvatar } from "react-icons/rx";
+import "./Nav.css";
 
 const Nav = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -36,7 +37,7 @@ const Nav = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 ">
+    <div className="navbar bg-base-100 text-text font-body font-medium lg:font-medium">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -62,12 +63,15 @@ const Nav = () => {
             {navLinks}
           </ul>
         </div>
-        <Link to={"/"} className="text-xl lg:text-2xl  lg:font-bold">
-          Deep Resident
+        <Link
+          to={"/"}
+          className="text-xl font-bold lg:text-3xl lg:font-bold font-heading"
+        >
+          Deep <span className="text-primary">Resident</span>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+        <ul className="flex gap-4 px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end ">
         {user ? (
