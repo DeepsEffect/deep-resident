@@ -46,7 +46,9 @@ const Banner = () => {
           alt=""
         />
         <div className="absolute text-white  bottom-10 left-10 text-left w-1/3 animate__animated animate__delay-5s animate__fadeInDown animate__slower animate__infinite">
-          <h2 className="font-bold text-2xl font-heading">Charming Townhouse</h2>
+          <h2 className="font-bold text-2xl font-heading">
+            Charming Townhouse
+          </h2>
           <p className="text-base">
             Experience the allure of townhouse living, blending timeless
             elegance with contemporary comfort in the heart of the city.
@@ -61,7 +63,9 @@ const Banner = () => {
           alt=""
         />
         <div className="absolute text-white  bottom-10 left-10 text-left w-1/3 animate__animated animate__delay-5s animate__fadeInDown animate__slower animate__infinite">
-          <h2 className="font-bold text-2xl font-heading">Vacation Rental Getaway</h2>
+          <h2 className="font-bold text-2xl font-heading">
+            Vacation Rental Getaway
+          </h2>
           <p className="text-base">
             Indulge in the ultimate vacation experience with our stunning rental
             properties, offering breathtaking views and luxurious amenities.
